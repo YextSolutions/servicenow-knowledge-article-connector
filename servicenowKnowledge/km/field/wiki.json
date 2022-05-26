@@ -1,0 +1,13 @@
+{
+  "$id": "servicenowKnowledge_wiki",
+  "$schema": "https://schema.yext.com/config/km/field/v1",
+  "displayName": "Wiki",
+  "group": "NONE",
+  "localization": "OVERRIDABLE",
+  "type": {
+    "stringType": {
+      "stereotype": "MULTILINE"
+    }
+  },
+  "typeId": "string"
+}

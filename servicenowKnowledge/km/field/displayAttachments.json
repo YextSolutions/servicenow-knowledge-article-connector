@@ -1,0 +1,11 @@
+{
+  "$id": "servicenowKnowledge_displayAttachments",
+  "$schema": "https://schema.yext.com/config/km/field/v1",
+  "displayName": "Display Attachments",
+  "group": "NONE",
+  "localization": "PRIMARY_ONLY",
+  "type": {
+    "booleanType": {}
+  },
+  "typeId": "boolean"
+}

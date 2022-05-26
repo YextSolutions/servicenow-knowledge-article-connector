@@ -1,0 +1,13 @@
+{
+  "$id": "servicenowKnowledge_domainPath",
+  "$schema": "https://schema.yext.com/config/km/field/v1",
+  "displayName": "Domain Path",
+  "group": "NONE",
+  "localization": "PRIMARY_ONLY",
+  "type": {
+    "stringType": {
+      "stereotype": "SIMPLE"
+    }
+  },
+  "typeId": "string"
+}

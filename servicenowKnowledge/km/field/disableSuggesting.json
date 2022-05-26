@@ -1,0 +1,11 @@
+{
+  "$id": "servicenowKnowledge_disableSuggesting",
+  "$schema": "https://schema.yext.com/config/km/field/v1",
+  "displayName": "Disable Suggesting",
+  "group": "NONE",
+  "localization": "PRIMARY_ONLY",
+  "type": {
+    "booleanType": {}
+  },
+  "typeId": "boolean"
+}

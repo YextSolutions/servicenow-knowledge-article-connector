@@ -1,0 +1,513 @@
+{
+  "$id": "servicenowKnowledge_knowledgeArticleConnector",
+  "$schema": "https://schema.yext.com/config/km/connector/v3",
+  "displayName": "ServiceNow Knowledge Article Connector",
+  "entityType": "helpArticle",
+  "source": {
+    "sourceConfig": {
+      "apiPullConfig": {
+        "requestType": "GET",
+        "url": "${{servicenow_domain}}/api/sn_km_api/knowledge/articles",
+        "authentication": {
+          "basicAuthentication": {
+            "username": "${{username}}",
+            "password": "${{password}}"
+          }
+        },
+        "paginationControl": {
+          "offsetPagination": {
+            "offsetKey": "offset",
+            "limitKey": "limit",
+            "offsetStartValue": 0,
+            "limitValue": 500,
+            "totalItems": {
+              "key": "result.meta.count",
+              "inHeader": false
+            }
+          }
+        },
+        "headers": {},
+        "queryParams": {
+          "fields": "active,article_type,author,cannot_read_user_criteria,can_read_user_criteria,category,description,direct,disable_commenting,disable_suggesting,flagged,image,kb_category,kb_knowledge_base,meta,meta_description,published,rating,retired,roles,source,sys_class_name,sys_created_by,sys_created_on,sys_domain,sys_domain_path,sys_mod_count,sys_updated_by,sys_updated_on,sys_view_count,topic,use_count,valid_to,wiki,workflow_state,text,short_description,display_attachments"
+        },
+        "dataFormat": "JSON"
+      }
+    },
+    "baseSelector": {
+      "type": "JSON",
+      "header": "Entity Container",
+      "path": "result.articles"
+    },
+    "selectors": [
+      {
+        "type": "JSON",
+        "header": "id",
+        "path": "id"
+      },
+      {
+        "type": "JSON",
+        "header": "title",
+        "path": "title"
+      },
+      {
+        "type": "JSON",
+        "header": "snippet",
+        "path": "snippet"
+      },
+      {
+        "type": "JSON",
+        "header": "number",
+        "path": "number"
+      },
+      {
+        "type": "JSON",
+        "header": "fields.active.display_value",
+        "path": "fields.active.display_value"
+      },
+      {
+        "type": "JSON",
+        "header": "fields.article_type.display_value",
+        "path": "fields.article_type.display_value"
+      },
+      {
+        "type": "JSON",
+        "header": "fields.author.display_value",
+        "path": "fields.author.display_value"
+      },
+      {
+        "type": "JSON",
+        "header": "fields.cannot_read_user_criteria.display_value",
+        "path": "fields.cannot_read_user_criteria.display_value"
+      },
+      {
+        "type": "JSON",
+        "header": "fields.can_read_user_criteria.display_value",
+        "path": "fields.can_read_user_criteria.display_value"
+      },
+      {
+        "type": "JSON",
+        "header": "fields.category.value",
+        "path": "fields.category.value"
+      },
+      {
+        "type": "JSON",
+        "header": "fields.description.display_value",
+        "path": "fields.description.display_value"
+      },
+      {
+        "type": "JSON",
+        "header": "fields.direct.display_value",
+        "path": "fields.direct.display_value"
+      },
+      {
+        "type": "JSON",
+        "header": "fields.disable_commenting.display_value",
+        "path": "fields.disable_commenting.display_value"
+      },
+      {
+        "type": "JSON",
+        "header": "fields.disable_suggesting.display_value",
+        "path": "fields.disable_suggesting.display_value"
+      },
+      {
+        "type": "JSON",
+        "header": "fields.flagged.display_value",
+        "path": "fields.flagged.display_value"
+      },
+      {
+        "type": "JSON",
+        "header": "fields.image.display_value",
+        "path": "fields.image.display_value"
+      },
+      {
+        "type": "JSON",
+        "header": "fields.kb_category.display_value",
+        "path": "fields.kb_category.display_value"
+      },
+      {
+        "type": "JSON",
+        "header": "fields.kb_knowledge_base.display_value",
+        "path": "fields.kb_knowledge_base.display_value"
+      },
+      {
+        "type": "JSON",
+        "header": "fields.meta.display_value",
+        "path": "fields.meta.display_value"
+      },
+      {
+        "type": "JSON",
+        "header": "fields.meta_description.display_value",
+        "path": "fields.meta_description.display_value"
+      },
+      {
+        "type": "JSON",
+        "header": "fields.published.display_value",
+        "path": "fields.published.display_value"
+      },
+      {
+        "type": "JSON",
+        "header": "fields.rating.display_value",
+        "path": "fields.rating.display_value"
+      },
+      {
+        "type": "JSON",
+        "header": "fields.retired.display_value",
+        "path": "fields.retired.display_value"
+      },
+      {
+        "type": "JSON",
+        "header": "fields.roles.display_value",
+        "path": "fields.roles.display_value"
+      },
+      {
+        "type": "JSON",
+        "header": "fields.source",
+        "path": "fields.source"
+      },
+      {
+        "type": "JSON",
+        "header": "fields.sys_class_name.display_value",
+        "path": "fields.sys_class_name.display_value"
+      },
+      {
+        "type": "JSON",
+        "header": "fields.sys_created_by.display_value",
+        "path": "fields.sys_created_by.display_value"
+      },
+      {
+        "type": "JSON",
+        "header": "fields.sys_created_on.display_value",
+        "path": "fields.sys_created_on.display_value"
+      },
+      {
+        "type": "JSON",
+        "header": "fields.sys_domain.display_value",
+        "path": "fields.sys_domain.display_value"
+      },
+      {
+        "type": "JSON",
+        "header": "fields.sys_domain_path.display_value",
+        "path": "fields.sys_domain_path.display_value"
+      },
+      {
+        "type": "JSON",
+        "header": "fields.sys_mod_count.display_value",
+        "path": "fields.sys_mod_count.display_value"
+      },
+      {
+        "type": "JSON",
+        "header": "fields.sys_updated_by.display_value",
+        "path": "fields.sys_updated_by.display_value"
+      },
+      {
+        "type": "JSON",
+        "header": "fields.sys_updated_on.display_value",
+        "path": "fields.sys_updated_on.display_value"
+      },
+      {
+        "type": "JSON",
+        "header": "fields.sys_view_count.display_value",
+        "path": "fields.sys_view_count.display_value"
+      },
+      {
+        "type": "JSON",
+        "header": "fields.topic.display_value",
+        "path": "fields.topic.display_value"
+      },
+      {
+        "type": "JSON",
+        "header": "fields.use_count.display_value",
+        "path": "fields.use_count.display_value"
+      },
+      {
+        "type": "JSON",
+        "header": "fields.valid_to.display_value",
+        "path": "fields.valid_to.display_value"
+      },
+      {
+        "type": "JSON",
+        "header": "fields.wiki.display_value",
+        "path": "fields.wiki.display_value"
+      },
+      {
+        "type": "JSON",
+        "header": "fields.workflow_state.display_value",
+        "path": "fields.workflow_state.display_value"
+      },
+      {
+        "type": "JSON",
+        "header": "fields.text.display_value",
+        "path": "fields.text.display_value"
+      },
+      {
+        "type": "JSON",
+        "header": "fields.short_description.display_value",
+        "path": "fields.short_description.display_value"
+      },
+      {
+        "type": "JSON",
+        "header": "fields.display_attachments.display_value",
+        "path": "fields.display_attachments.display_value"
+      }
+    ]
+  },
+  "transforms": [
+    {
+      "formatDates": {
+        "inputHeaders": {
+          "headers": [
+            "fields.sys_created_on.display_value",
+            "fields.sys_updated_on.display_value"
+          ]
+        },
+        "inputFormat": "yyyy-MM-dd HH:mm:ss"
+      }
+    },
+    {
+      "addColumn": {
+        "newColumnHeader": "Landing Page URL Base",
+        "columnValue": "https://ven04588.service-now.com/kb_view.do?sysparm_article\u003d"
+      }
+    },
+    {
+      "mergeColumns": {
+        "inputHeaders": [
+          "Landing Page URL Base",
+          "number"
+        ],
+        "newColumnHeader": "Landing Page URL",
+        "delimiter": ""
+      }
+    }
+  ],
+  "mappings": [
+    {
+      "field": "servicenowKnowledge_snippet",
+      "header": "snippet",
+      "subfieldPath": []
+    },
+    {
+      "field": "servicenowKnowledge_author",
+      "header": "fields.author.display_value",
+      "subfieldPath": []
+    },
+    {
+      "field": "servicenowKnowledge_canReadUserCriteria",
+      "header": "fields.can_read_user_criteria.display_value",
+      "subfieldPath": []
+    },
+    {
+      "field": "servicenowKnowledge_datePublished",
+      "header": "fields.published.display_value",
+      "subfieldPath": []
+    },
+    {
+      "field": "landingPageUrl",
+      "header": "Landing Page URL",
+      "subfieldPath": []
+    },
+    {
+      "field": "servicenowKnowledge_workflowState",
+      "header": "fields.workflow_state.display_value",
+      "subfieldPath": []
+    },
+    {
+      "field": "servicenowKnowledge_cannotReadUserCriteria",
+      "header": "fields.cannot_read_user_criteria.display_value",
+      "subfieldPath": []
+    },
+    {
+      "field": "servicenowKnowledge_image",
+      "header": "fields.image.display_value",
+      "subfieldPath": [
+        {
+          "name": "url"
+        }
+      ]
+    },
+    {
+      "field": "servicenowKnowledge_direct",
+      "header": "fields.direct.display_value",
+      "subfieldPath": []
+    },
+    {
+      "field": "servicenowKnowledge_createdBy",
+      "header": "fields.sys_created_by.display_value",
+      "subfieldPath": []
+    },
+    {
+      "field": "servicenowKnowledge_description",
+      "header": "fields.description.display_value",
+      "subfieldPath": []
+    },
+    {
+      "field": "name",
+      "header": "title",
+      "subfieldPath": []
+    },
+    {
+      "field": "servicenowKnowledge_active",
+      "header": "fields.active.display_value",
+      "subfieldPath": []
+    },
+    {
+      "field": "servicenowKnowledge_dateUpdated",
+      "header": "fields.sys_updated_on.display_value",
+      "subfieldPath": []
+    },
+    {
+      "field": "servicenowKnowledge_number",
+      "header": "number",
+      "subfieldPath": []
+    },
+    {
+      "field": "servicenowKnowledge_category",
+      "header": "fields.category.value",
+      "subfieldPath": []
+    },
+    {
+      "field": "servicenowKnowledge_type",
+      "header": "fields.article_type.display_value",
+      "subfieldPath": []
+    },
+    {
+      "field": "servicenowKnowledge_knowledgeBaseCategory",
+      "header": "fields.kb_category.display_value",
+      "subfieldPath": []
+    },
+    {
+      "field": "servicenowKnowledge_knowledgeBase",
+      "header": "fields.kb_knowledge_base.display_value",
+      "subfieldPath": []
+    },
+    {
+      "field": "servicenowKnowledge_disableCommenting",
+      "header": "fields.disable_commenting.display_value",
+      "subfieldPath": []
+    },
+    {
+      "field": "servicenowKnowledge_useCount",
+      "header": "fields.use_count.display_value",
+      "subfieldPath": []
+    },
+    {
+      "field": "shortDescription",
+      "header": "fields.short_description.display_value",
+      "subfieldPath": []
+    },
+    {
+      "field": "entityId",
+      "header": "id",
+      "subfieldPath": []
+    },
+    {
+      "field": "servicenowKnowledge_flagged",
+      "header": "fields.flagged.display_value",
+      "subfieldPath": []
+    },
+    {
+      "field": "body",
+      "header": "fields.text.display_value",
+      "subfieldPath": []
+    },
+    {
+      "field": "servicenowKnowledge_userRoles",
+      "header": "fields.roles.display_value",
+      "subfieldPath": []
+    },
+    {
+      "field": "servicenowKnowledge_displayAttachments",
+      "header": "fields.display_attachments.display_value",
+      "subfieldPath": []
+    },
+    {
+      "field": "servicenowKnowledge_metaDescription",
+      "header": "fields.meta_description.display_value",
+      "subfieldPath": []
+    },
+    {
+      "field": "servicenowKnowledge_domain",
+      "header": "fields.sys_domain.display_value",
+      "subfieldPath": []
+    },
+    {
+      "field": "servicenowKnowledge_className",
+      "header": "fields.sys_class_name.display_value",
+      "subfieldPath": []
+    },
+    {
+      "field": "servicenowKnowledge_viewCount",
+      "header": "fields.sys_view_count.display_value",
+      "subfieldPath": []
+    },
+    {
+      "field": "servicenowKnowledge_source",
+      "header": "fields.source",
+      "subfieldPath": []
+    },
+    {
+      "field": "servicenowKnowledge_updatedBy",
+      "header": "fields.sys_updated_by.display_value",
+      "subfieldPath": []
+    },
+    {
+      "field": "servicenowKnowledge_dateCreated",
+      "header": "fields.sys_created_on.display_value",
+      "subfieldPath": []
+    },
+    {
+      "field": "servicenowKnowledge_validUntil",
+      "header": "fields.valid_to.display_value",
+      "subfieldPath": []
+    },
+    {
+      "field": "servicenowKnowledge_dateRetired",
+      "header": "fields.retired.display_value",
+      "subfieldPath": []
+    },
+    {
+      "field": "servicenowKnowledge_rating",
+      "header": "fields.rating.display_value",
+      "subfieldPath": []
+    },
+    {
+      "field": "servicenowKnowledge_updates",
+      "header": "fields.sys_mod_count.display_value",
+      "subfieldPath": []
+    },
+    {
+      "field": "servicenowKnowledge_domainPath",
+      "header": "fields.sys_domain_path.display_value",
+      "subfieldPath": []
+    },
+    {
+      "field": "servicenowKnowledge_wiki",
+      "header": "fields.wiki.display_value",
+      "subfieldPath": []
+    },
+    {
+      "field": "servicenowKnowledge_disableSuggesting",
+      "header": "fields.disable_suggesting.display_value",
+      "subfieldPath": []
+    },
+    {
+      "field": "servicenowKnowledge_meta",
+      "header": "fields.meta.display_value",
+      "subfieldPath": []
+    },
+    {
+      "field": "servicenowKnowledge_topic",
+      "header": "fields.topic.display_value",
+      "subfieldPath": []
+    }
+  ],
+  "scheduleConfig": {
+    "customSchedule": {
+      "timeZone": "America/New_York",
+      "startDate": "2022-05-20",
+      "startTime": "00:00",
+      "frequencyType": "DAILY"
+    },
+    "runMode": "COMPREHENSIVE"
+  }
+}

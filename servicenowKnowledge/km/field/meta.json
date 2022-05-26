@@ -1,0 +1,13 @@
+{
+  "$id": "servicenowKnowledge_meta",
+  "$schema": "https://schema.yext.com/config/km/field/v1",
+  "displayName": "Meta",
+  "group": "NONE",
+  "localization": "OVERRIDABLE",
+  "type": {
+    "stringType": {
+      "stereotype": "MULTILINE"
+    }
+  },
+  "typeId": "string"
+}

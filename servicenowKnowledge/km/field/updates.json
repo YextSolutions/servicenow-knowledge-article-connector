@@ -1,0 +1,11 @@
+{
+  "$id": "servicenowKnowledge_updates",
+  "$schema": "https://schema.yext.com/config/km/field/v1",
+  "displayName": "Updates",
+  "group": "NONE",
+  "localization": "OVERRIDABLE",
+  "type": {
+    "decimalType": {}
+  },
+  "typeId": "decimal"
+}

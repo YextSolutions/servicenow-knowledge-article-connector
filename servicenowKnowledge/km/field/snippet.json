@@ -1,0 +1,13 @@
+{
+  "$id": "servicenowKnowledge_snippet",
+  "$schema": "https://schema.yext.com/config/km/field/v1",
+  "displayName": "Snippet",
+  "group": "NONE",
+  "localization": "OVERRIDABLE",
+  "type": {
+    "stringType": {
+      "stereotype": "MULTILINE"
+    }
+  },
+  "typeId": "string"
+}
