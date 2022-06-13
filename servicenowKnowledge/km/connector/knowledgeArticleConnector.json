@@ -297,7 +297,7 @@
       "subfieldPath": []
     },
     {
-      "field": "servicenowKnowledge_datePublished",
+      "field": "externalArticlePostDate",
       "header": "fields.published.display_value",
       "subfieldPath": []
     },
@@ -351,7 +351,7 @@
       "subfieldPath": []
     },
     {
-      "field": "servicenowKnowledge_dateUpdated",
+      "field": "externalArticleUpdateDate",
       "header": "fields.sys_updated_on.display_value",
       "subfieldPath": []
     },
