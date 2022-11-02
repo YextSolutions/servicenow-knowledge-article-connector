@@ -5,32 +5,14 @@
   "entityType": "helpArticle",
   "source": {
     "sourceConfig": {
-      "apiPullConfig": {
-        "requestType": "GET",
-        "url": "${{servicenow_domain}}/api/sn_km_api/knowledge/articles",
-        "authentication": {
-          "basicAuthentication": {
-            "username": "${{username}}",
-            "password": "${{password}}"
-          }
-        },
-        "paginationControl": {
-          "offsetPagination": {
-            "offsetKey": "offset",
-            "limitKey": "limit",
-            "offsetStartValue": 0,
-            "limitValue": 500,
-            "totalItems": {
-              "key": "result.meta.count",
-              "inHeader": false
-            }
-          }
-        },
-        "headers": {},
-        "queryParams": {
-          "fields": "active,article_type,author,cannot_read_user_criteria,can_read_user_criteria,category,description,direct,disable_commenting,disable_suggesting,flagged,image,kb_category,kb_knowledge_base,meta,meta_description,published,rating,retired,roles,source,sys_class_name,sys_created_by,sys_created_on,sys_domain,sys_domain_path,sys_mod_count,sys_updated_by,sys_updated_on,sys_view_count,topic,use_count,valid_to,wiki,workflow_state,text,short_description,display_attachments"
-        },
-        "dataFormat": "JSON"
+      "nativeSourceConfig": {
+        "source": "servicenow",
+        "operation": "fetchKnowledgeArticles",
+        "inputs": {
+          "password": "${{password}}",
+          "servicenow_domain": "${{servicenow_domain}}",
+          "username": "${{username}}"
+        }
       }
     },
     "baseSelector": {
