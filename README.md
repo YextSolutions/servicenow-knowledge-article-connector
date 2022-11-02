@@ -1,7 +1,7 @@
 #### servicenow-knowledge-article-connector
 
 # Product Description
-Pull your ServiceNow Knowledge Articles into your Yext Knowledge Graph! Servicenow's cloud‑based platform and solutions deliver digital workflows that create great experiences and unlock productivity for employees and the enterprise.
+Pull your ServiceNow Knowledge Articles into your Yext Knowledge Graph! ServiceNow's cloud‑based platform and solutions deliver digital workflows that create great experiences and unlock productivity for employees and the enterprise.
 
 If you use ServiceNow for Customer Service Management, you may be storing support content - such as Knowledge Articles - in ServiceNow. The ServiceNow Knowledge Article Connector app will automatically sync all of your Knowledge Articles from ServiceNow into the Yext Knowledge Graph on a regular basis. 
 
