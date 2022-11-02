@@ -15,11 +15,6 @@
         }
       }
     },
-    "baseSelector": {
-      "type": "JSON",
-      "header": "Entity Container",
-      "path": "result.articles"
-    },
     "selectors": [
       {
         "type": "JSON",
